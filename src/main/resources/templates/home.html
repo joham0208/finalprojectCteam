@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book's</title>
+<!-- 스타일시트초기화 -->
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/home.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/favicon.png">
+</head>
+
+<body class="main">
+	<div layout:fragment="layoutContent">
+		<!-- 메인 더블버튼 -->
+		<div class="button-main">
+		
+			<div class="button-main-title">
+				<h1>찾으시는게 있으신가요?</h1>
+				<h2>버튼을 눌러 간편하게 이동하세요!</h2>
+			</div>
+			
+			<!-- 버튼이동 -->
+			<div class="button-select">
+				<!-- <img class="shelter" src="image/book.png" alt="book"> -->
+				<a href="#main-button-content">
+					<button type="button" class="libsearch" >도서관 찾기</button>
+				</a>
+				<a th:href="@{search}">
+					<button type="button" class="booksearch">책 검색하기</button>
+				</a>
+			</div>
+		</div>
+		<!-- 메인 더블버튼 -->
+	
+		<!-- <div class="slider">
+			<input type="radio" name="slide" id="slide1" checked> <input
+				type="radio" name="slide" id="slide2"> <input type="radio"
+				name="slide" id="slide3"> <input type="radio" name="slide"
+				id="slide4">
+			<ul id="imgholder" class="imgs">
+				<li><img src="/image/slide1.jpg"></li>
+				<li><img src="/image/slide2.jpg"></li>
+				<li><img src="/image/slide3.jpg"></li>
+				<li><img src="/image/slide4.jpg"></li>
+			</ul>
+			<div class="bullets">
+				<label for="slide1">&nbsp;</label> <label for="slide2">&nbsp;</label>
+				<label for="slide3">&nbsp;</label> <label for="slide4">&nbsp;</label>
+			</div>
+		</div> -->
+
+
+		<!-- 지도 -->
+		<div class="map-controll">
+			<div class="map-title">
+				<h1>서울특별시 도서관 지도</h1>
+			</div>
+			<div class="main-map" id="map" style="width: 800px; height: 400px;"></div>
+			<script type="text/javascript"
+				src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5504a7c7e832f612484025cb3112ad8f&libraries=services"></script>
+		</div>
+		<!-- 지도 -->
+
+		<!-- 무더위쉼터 표-->
+		<div class="main-content" id="main-button-content">
+			<div class="main-title">
+				<h1>지역선택</h1>
+			</div>
+			<div class="main-container">
+                <div class="button-form">
+                    <button class="btn"><a href="list">전체</a></button>
+                    <button class="btn"><a href="#">강남</a></button>
+                    <button class="btn"><a href="#">강동</a></button>
+                    <button class="btn"><a href="#">강북</a></button>
+                    <button class="btn"><a href="#">강서</a></button>
+                    <button class="btn"><a href="#">관악</a></button>
+                    <button class="btn"><a href="#">광진</a></button>
+                    <button class="btn"><a href="#">구로</a></button>
+                    <button class="btn"><a href="#">금천</a></button>
+                    <button class="btn"><a href="#">노원</a></button>
+                    <button class="btn"><a href="#">도봉</a></button>
+                    <button class="btn"><a href="#">동대문</a></button>
+                    <button class="btn"><a href="#">동작</a></button>
+                    <button class="btn"><a href="#">마포</a></button>
+                    <button class="btn"><a href="#">서대문</a></button>
+                    <button class="btn"><a href="#">서초</a></button>
+                    <button class="btn"><a href="#">성동</a></button>
+                    <button class="btn"><a href="#">성북</a></button>
+                    <button class="btn"><a href="#">송파</a></button>
+                    <button class="btn"><a href="#">양천</a></button>
+                    <button class="btn"><a href="#">영등포</a></button>
+                    <button class="btn"><a href="#">용산</a></button>
+                    <button class="btn"><a href="#">은평</a></button>
+                    <button class="btn"><a href="#">종로</a></button>
+                    <button class="btn"><a href="#">중구</a></button>
+                    <button class="btn"><a href="#">중랑</a></button>
+                </div>
+            </div>
+            <!-- 검색창 -->
+			<br> <br>
+			<div class="search-title">
+				<h3>우리동네 도서관은 어디에??</h3>
+			</div>
+			<br> <br>
+            <div class="search-form">
+				<form class="seach">
+					<button class="img-button" type="submit" name="click" value="">
+						<i class="fas fa-search"></i>
+					</button>
+					<input class="keyword" type="text" name="search" maxlength=255
+					value="" autocomplete="off" placeholder="검색하기"> 
+				</form>
+			</div>
+			<!-- 검색창 -->
+            
+			<div class="main-list">
+				<div class="library-list">
+					<h2>서울특별시 도서관 리스트</h2>
+					<br>
+					<br>
+					<div>
+						<table class="list">
+							<thead>
+								<tr>
+									<th>위치</th>
+									<th>행정구</th>
+									<th>도서관</th>
+									<th>전화번호</th>
+								</tr>
+							</thead>
+							<tbody th:if="${lib_list.size() >= 1}">
+								<tr th:each="book: ${lib_list}" th:object="${book}">
+									<td th:text="${book.address}"><i class="fas fa-map-marker-alt"></i></td>
+									<td th:text="${book.gu_name}"></td>
+									<td class="name" th:text="${book.name}"></td>
+									<td th:text="${book.tel}"></td>
+								</tr>
+							</tbody>
+						</table>
+							<div class="paging-btn">
+								<ul class="pagination">
+									<li><a></a></li>
+								</ul>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 무더위쉼터 표-->
+	</div>
+</body>
+</html>

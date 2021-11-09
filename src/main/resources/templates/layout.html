@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="java">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="common-meta">
+<title>Book's</title>
+<!-- 스타일시트초기화 -->
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/layout.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/favicon.png">
+
+<script src="https://kit.fontawesome.com/7295270e65.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<header class="main-header" id="top">
+		<div class="header-container">
+			<div class="main-title">
+				<h1 class="main-logo">
+					<a th:href="@{/}">Book's</a>
+					<a class="weather-form">
+						<b class="weather">
+							<b class="CurrIcon"></b>
+							<b class="CurrTemp"></b>
+							<b class="City"></b>
+						</b>
+					</a>
+				</h1>
+				<div class="navbtn"></div>
+			</div>
+			<nav>
+				<ul class="header-nav collapse">
+					<li><a th:href="@{/}">Home</a></li>
+					<li><a th:href="@{about}">About</a></li>
+					<li><a th:href="@{comment}">Comment</a></li>
+					<li><a th:href="@{join}">Join</a></li>
+					<li><a th:href="@{login}">Login</a></li>
+					<li><a th:href="@{search}">Search</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="content">
+		<main id="main-area" layout:fragment="layoutContent">
+			<p>Default content</p>
+		</main>
+	</div>
+
+	<!-- 풋터 완성본 -->
+	<div class="gotop">
+		<a href="#top"><i class="fas fa-chevron-up"></i></a>
+	</div>
+	<footer class="page-footer">
+		<div class="footer-container">
+			<div class="footer-logo">
+				<a th:href="@{/}">
+					<h2>Book's</h2>
+				</a>
+			</div>
+			<ul class="footer-nav">
+				<li><a th:href="@{/}">Home</a></li>
+				<li><a th:href="@{about}">about</a></li>
+			</ul>
+			<ul class="footer-comment">
+				<li>종이 속 지식은행 Book's 입니다.</li>
+			</ul>
+			<p class="copyright">© Book's All rights reserved.</p>
+		</div>
+	</footer>
+	<!-- 풋터 완성본 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js?ver=1"></script>
+	<script src="js/join.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/comment.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/list.js"></script>
+</body>
+</html>

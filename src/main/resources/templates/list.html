@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Jquery CDN 로드 : 항상 최신 버전 사용 -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- 부트스트랩 CDN 로드 : 항상 최신 버전 사용 : maxcdn -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+
+
+<!-- 부트스트랩 CDN 로드 : 항상 최신 버전 사용 : netdna -->
+<!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"> -->
+<!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script> -->
+
+
+<link href="css/list.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>도서관</th>
+					<th>구</th>
+					<th>주소</th>
+					<th>전화번호</th>
+				</tr>
+			</thead>
+			<tbody th:if="${lib_list.size() >= 1}" id="dyn_tbody">
+				<tr th:each="book: ${lib_list}" th:object="${book}">
+					<td th:text="${book.name}"></td>
+					<td th:text="${book.gu_name}"></td>
+					<td th:text="${book.address}"></td>
+					<td th:text="${book.tel}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- 페이징 속성 정의 -->
+		<nav aria-label="Page navigation example">
+			<ul id="dyn_ul" class="pagination" style="justify-content: center;">
+				<!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+	    <li class="page-item"><a class="page-link" href="#">1</a></li>	    
+	    <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+			</ul>
+		</nav>
+
+	</div>
+	<script th:inline="javascript"></script>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/list.js"></script>
+</body>
+</html>

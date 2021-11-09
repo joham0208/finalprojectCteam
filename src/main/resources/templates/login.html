@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book's</title>
+<!-- 스타일시트초기화 -->
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/favicon.png">
+</head>
+<body class="main">
+	<div layout:fragment="layoutContent">
+		<div class="login-main">
+			<div class="login-title">
+				<h1>로그인</h1>
+			</div>
+<!-- 					<div class="kakao-login">
+						<ul>
+							<li onclick="kakaoLogin();">
+								<a href="javascript:void(0)">
+									<img src="/image/kakaoll.png" />				
+								</a>
+							</li>
+						</ul>
+					</div> -->
+
+			<!-- 로그인 -->
+			<section class="login-wrap">
+				<form class="form-signin" th:action="@{signIn}" method="post">
+					<div class="login-id-wrap">
+						<input id="inputId" name="inputId" placeholder="아이디" type="text"></input>
+					</div>
+					<div class="login-pw-wrap">
+						<input id="inputPassword" name="inputPassword" placeholder="비밀번호"
+							type="password"></input>
+					</div>
+					<div class="login-btn-wrap">
+						<button id="login-btn" type="submit">로그인</button>
+					</div>
+					<div class="login-btn-kakao">
+						<div onclick="kakaoLogin();">
+							<a href="javascript:void(0)">
+								<span>카카오 로그인</span>				
+							</a>
+						</div>
+					</div>
+					<div class="under-login">
+						<span class="stay-check"> <input id="stay-checkbox"
+							type="checkbox"></input> <label for="stay-checkbox"
+							id="stay-text">로그인 상태 유지</label>
+						</span>
+					</div>
+				</form>
+			</section>
+			<!-- 로그인 -->
+
+			<!-- ID/PW찾기 -->
+			<!--class,PW 찾기 및 회원가입 부분-->
+			<section class="find-signup-wrap">
+				<div id="find-signup-wrap-ko">
+					<span class="find-id"> <a
+						href="https://nid.naver.com/user2/help/idInquiry?lang=ko_KR"
+						target="_blank" title="QR코드 로그인">아이디 찾기</a>
+					</span> <span class="find-pw"> <a
+						href="https://nid.naver.com/user2/help/pwInquiry?lang=ko_KR"
+						target="_blank" title="일회용번호 로그인">비밀번호 찾기</a>
+					</span> <span class="sign-up"> <a th:href="@{signUp}"
+						target="_blank" title="일회용번호 로그인">회원가입</a>
+					</span>
+				</div>
+			</section>
+			<!-- ID/PW찾기 -->
+		</div>
+	</div>
+</body>
+</html>

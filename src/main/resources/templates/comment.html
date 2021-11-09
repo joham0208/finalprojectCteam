@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book's</title>
+<!-- 스타일시트초기화 -->
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/comment.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/favicon.png">
+</head>
+<body class="main">
+	<div layout:fragment="layoutContent">
+		<div class="comment-main">
+			<!-- 코멘드 타이틀 -->
+			<div class="comment-title">
+				<h1>한줄평을 남겨주세요!</h1>
+			</div>
+			
+			<div class="comment-subtitle">
+				<h2>Book's를 찾아주셔서 진심으로 감사합니다.</h2>			
+			</div>
+			
+			<p class="comment-content">
+				<br><br>
+				Book's는 독서인구 증진을 위해 만들어졌습니다.
+				<br><br>
+				사이트 이용중 불만 또는 건의 사항이 있으신경우
+				<br><br>
+				아래의 댓글창에 꼭 남겨주세요.
+				<br><br>
+				의견/건의/불만 사항을 최대한 빠르게 반영하여
+				<br><br>
+				사이트 이용시 불편함이 없도록 최선을 다하겠습니다.
+				<br><br>
+			</p>
+			
+			
+			<div id="disqus_thread"></div>
+			<noscript>
+				죄송합니다 현재 댓글이 작동하지 않습니다. 
+				<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+			</noscript>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/*반응형 웹디자인 및 기본설정*/
+
+html *,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* 글꼴 */
+html {
+  height: 100%;
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  font-family: 'twayair', sans-serif;
+  font-weight: 400;
+  /* font 기본 두께 지정 */
+}
+
+/* 제목 굵게 처리 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+strong {
+  font-weight: 700;
+}
+
+/* 표준 링크 색상 */
+a {
+  color: #f30;
+}
+
+br {
+  align-content: center;
+}
+
+/* 반응형 웹 디자인 및 이미지 아래 여백제거 */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  /* 이미지 아래 여백 삭제 */
+}
+
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*반응형 웹디자인 및 기본설정*/
+
+
+
+.comment-main{
+  margin-top: 20px;
+  min-height: 100vh;
+}
+/*가로 800px 이상일때*/
+@media(min-width : 800px){
+    .comment-main{
+        width: 460px;
+        margin: auto;
+    }
+}
+
+
+/*  타이틀 */
+.comment-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.comment-subtitle {
+  color: #8f784b;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.comment-content{
+	text-align: center;
+	
+}

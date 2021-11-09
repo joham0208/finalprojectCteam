@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book's</title>
+<!-- 스타일시트초기화 -->
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/search.css" rel="stylesheet">
+<link rel="shortcut icon" href="image/favicon.png">
+</head>
+<body class="main">
+	<div layout:fragment="layoutContent">
+		<div class="book-main">
+		
+			<div class="book-main-title">
+				<h1>책 검색</h1>
+				<h2>책 제목을 정확히 입력해주세요!</h2>
+			</div>
+			
+			<!-- 책검색 -->
+			<div class="booksearch">
+				<!-- <img class="shelter" src="image/book.png" alt="book"> -->
+				<div class="books">
+					<input id="bookname" value="" type="text" placeholder="책 제목을 입력해주세요!">
+				</div>
+				<button class="search">검색</button>
+				<button class="delete">지우기</button>
+				
+				<table class="bookinfo">
+					<thead>
+						<tr>
+							<th>표지</th>
+							<th>제목</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="bookimg"></td>
+							<td class="booktitle"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

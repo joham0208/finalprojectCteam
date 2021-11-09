@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+/*반응형 웹디자인 및 기본설정*/
+
+html *,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* 글꼴 */
+html {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100%;
+  font-family: 'twayair', sans-serif;
+  font-weight: 400;
+  /* font 기본 두께 지정 */
+}
+
+/* 제목 굵게 처리 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+strong {
+  font-weight: 700;
+}
+
+/* 표준 링크 색상 */
+a {
+  color: #f30;
+}
+
+br {
+  align-content: center;
+}
+
+/* 반응형 웹 디자인 및 이미지 아래 여백제거 */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  /* 이미지 아래 여백 삭제 */
+}
+
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*반응형 웹디자인 및 기본설정*/
+
+
+
+
+
+/* 페이지 헤더 */
+.main-header {
+  margin-top:80px;
+  position: relative;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1040px;
+  }
+}
+
+/* 페이지 헤더 */
+
+
+
+
+
+/* 헤더 로그와 모바일 네비게이션 버튼 */
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-title a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    display: block;
+    padding: 70px 0 0 0;
+  }
+}
+
+
+
+
+/* 로고  */
+.main-logo {
+  float:left;
+  width:49%;
+  margin: 0;
+  padding-left: 15px;
+  font-size: 60px;
+  color: #8f784b;
+  line-height: 0;
+  direction: initial;
+}
+
+.main-logo a{
+	color:#8f784b;
+}
+
+@media (min-width: 768px) {
+  .main-logo {
+    padding: 0;
+  }
+}
+
+/* 로고  */
+
+
+/* 날씨 */
+.weather-form {
+	float :right;
+	width:49%;
+	margin: 0px auto;
+}
+
+.weather {
+	text-align:left;
+	color: #FFCC33;
+}
+
+.CurrIcon, .CurrTemp {
+	display: inline-block;
+	font-size: 20px;
+	text-align: center;
+}
+
+.CurrIcon{
+	color: #FFCC33;
+}
+
+.City {
+	font-size: 20px;
+}
+/* 날씨 */
+
+
+
+
+
+/* 네비게이션 */
+.navbtn {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-image: url(../image/nav-mobile-open.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.navbtn.close {
+  background-image: url(../image/nav-mobile-close.svg);
+}
+
+@media (min-width: 768px) {
+  .navbtn {
+    display: none;
+  }
+}
+
+/* 네비게이션 */
+
+/*  헤더 네비게이션 */
+.header-nav {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-nav.collapse {
+  display: none;
+}
+
+.header-nav li a {
+  display: block;
+  padding: 20px 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.header-nav li a:hover {
+  color: black;
+  background: #8f784b;
+}
+
+@media (min-width: 768px) {
+
+  /* PC용 */
+  .header-nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .header-nav li a {
+    padding: 6px 20px 2px 20px;
+    border-top: none;
+    border-bottom: 4px solid transparent;
+    background: none;
+  }
+
+  .header-nav li a:hover {
+    border-bottom: 4px solid #8f784b;
+    background: none;
+  }
+}
+
+/*  헤더 네비게이션 */
+
+/* 업스크롤 */
+.gotop {
+  text-align: center;
+}
+
+.gotop a i{
+	color:white;
+}
+
+.gotop a {
+  display: inline-block;
+  padding: 1rem 4rem;
+  background: #8f784b;
+  border-radius: 20px 20px 0 0;
+  font-size: 1.25rem;
+  text-align: center;
+  color: white;
+  opacity: .6;
+}
+
+.gotop a:hover {
+  opacity: .8;
+}
+
+/* 업스크롤 */
+
+
+/* 바닥글 */
+.page-footer {
+  position: absolute;
+  left: 0px;
+  right: 0;
+  width: 100%;
+  background:#8f784b;
+}
+
+.footer-container {
+  padding: 60px 4%;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+}
+
+
+/**
+ * ---------------------------------------
+ * 바닥글 모듈 
+ */
+/* 로고 */
+.footer-logo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.footer-logo a {
+  color: white;
+  width: 160px;
+  text-decoration: none;
+}
+
+/* 바닥글 네비 */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 30px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav li {
+  margin: 0 0 2rem 0;
+  font-size: .875rem;
+}
+
+.footer-nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav li a:hover {
+  border-bottom: 2px solid #8f784b;
+  text-decoration: underline;
+}
+
+@media(min-width: 768px) {
+  .footer-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-nav li {
+    margin: 0 1rem;
+  }
+}
+
+
+
+
+
+/* 바닥글코멘트 */
+.footer-comment {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-comment li {
+  margin: 0 .75rem 3px .75rem;
+  font-size: .75rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* 바닥글코멘트 */
+
+
+
+
+/* 저작권 */
+.copyright {
+  font-size: .75rem;
+  color: white;
+  text-align: center;
+}
+
+/* 저작권 */

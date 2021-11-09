@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="nav-mobile-open" transform="translate(-315)">
+    <rect id="직사각형_14" data-name="직사각형 14" width="60" height="60" transform="translate(315)" fill="white"/>
+    <g id="그룹_487" data-name="그룹 487">
+      <rect id="직사각형_112" data-name="직사각형 112" width="24" height="4" rx="2" transform="translate(333 19)" fill="#8f784b"/>
+      <rect id="직사각형_130" data-name="직사각형 130" width="24" height="4" rx="2" transform="translate(333 28)" fill="#8f784b"/>
+      <path id="패스_163" data-name="패스 163" d="M2,0H22a2,2,0,0,1,0,4H2A2,2,0,0,1,2,0Z" transform="translate(333 37)" fill="#8f784b"/>
+    </g>
+  </g>
+</svg>
